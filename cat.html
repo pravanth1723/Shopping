@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Here</title>
+    <link rel="stylesheet" type="text/css" href="catstyle.css">
+    <link rel="stylesheet" href="stylemain.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    body {
+        background: linear-gradient(to right top, black 12%, white 33%, grey 45%, white 69%, black 100%);
+    }
+
+    .bed {
+        font-size: large;
+        font-weight: bold;
+        color: rgb(32, 31, 31);
+    }
+
+    #cart,
+    #cartqty:hover {
+        cursor: pointer;
+    }
+
+    .cat {
+        margin-left: 0px;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+    }
+
+    select {
+        background: #68b538ba;
+        padding: 2px;
+        border-radius: 2px;
+        border: 2px solid grey;
+    }
+
+    .mrp {
+        color: grey;
+    }
+</style>
+
+<style>
+    option {
+        background: whitesmoke;
+        margin: 5px;
+    }
+
+    .alert {
+        padding: 10px 10px;
+        padding-bottom: 0px;
+        position: fixed;
+        top: 30%;
+        background-color: #f27269;
+        background: red;
+        color: white;
+        width: fit-content;
+        right: 0px;
+        font-size: 20px;
+        display: none;
+    }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.1s;
+    }
+
+    .closebtn:hover {
+        color: black;
+    }
+
+    .alert p {
+        height: 4px;
+        background: green;
+        position: relative;
+        margin-left: -10px;
+        margin-top: 5px;
+
+    }
+
+    #cnf {
+        position: fixed;
+        align-self: center;
+        top: 45%;
+        display: none;
+        padding: 20px 30px;
+        background: white;
+        border-radius: 5px;
+    }
+
+    .selectclass {
+        margin-bottom: 5px;
+    }
+
+    .fa-star {
+        /* background: white; */
+        color: rgb(209, 206, 206);
+    }
+
+    .checked {
+        color: orange;
+    }
+
+    .fa-heart {
+        padding: 10px;
+        border-radius: 50%;
+        background: rgb(238, 234, 234);
+    }
+</style>
+
+<body>
+    <nav class="navbar" id="navbar">
+    </nav>
+    <i class="fa fa-shopping-cart" id="cart" onclick="billingcost()"></i>
+    <div class="cats" id="cats">
+        <div class="cat">
+            <h3>Coir Mattresses</h3>
+        </div>
+        <div class="cat" id="cat1">
+            <div class="bed" id="bed11">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i11">Item1<i class="fa-regular fa-heart" onclick="clr_change('h1')" id="h1"
+                            style="color: red;"></i>
+                    </p>
+                    <!-- <i class="fa-regular fa-heart" onclick="clr_change('h1')" id="h1" style="color: red;"></i></p> -->
+                    <p>Price:₹2,559</p>
+                    <!-- <p class="mrp" style="text-decoration: line-through;">₹5,999</p> -->
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+                    <select name="model" class="qtyclass" id="bed11model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed11qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+
+
+                    <br>
+                    <input type="submit" class="checkout" onclick="bill('bed11')" value="Add to cart" id="btn11">
+                </div>
+            </div>
+            <div class="bed" id="bed12">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i12">Item2<i class="fa-regular fa-heart" onclick="clr_change('h2')" id="h2"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed12model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed12qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed12')" value="Add to cart" id="btn12"></p>
+
+                </div>
+
+
+            </div>
+            <div class="bed" id="bed13">
+
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i13">Item3<i class="fa-regular fa-heart" onclick="clr_change('h3')" id="h3"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,599</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed13model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed13qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed13')" value="Add to cart" id="btn13"></p>
+                </div>
+
+
+            </div>
+            <div class="bed" id="bed14">
+
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i14">Item4<i class="fa-regular fa-heart" onclick="clr_change('h4')" id="h4"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹5 ,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+                    <select name="model" class="qtyclass" id="bed14model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed14qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed14')" value="Add to cart" id="btn14"></p>
+                </div>
+            </div>
+        </div>
+        <div class="cat">
+            <h3>Pillows and coushins</h3>
+        </div>
+        <div class="cat" id="cat2">
+            <div class="bed" id="bed21">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i21">Item5<i class="fa-regular fa-heart" onclick="clr_change('h5')" id="h5"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed21model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed21qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed21')" value="Add to cart" id="btn21"></p>
+                </div>
+
+
+
+            </div>
+            <div class="bed" id="bed22">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i22">Item6<i class="fa-regular fa-heart" onclick="clr_change('h6')" id="h6"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed22model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed22qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed22')" value="Add to cart" id="btn22"></p>
+                </div>
+
+
+
+            </div>
+            <div class="bed" id="bed23">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i23">Item7<i class="fa-regular fa-heart" onclick="clr_change('h7')" id="h7"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed23model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed23qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed23')" value="Add to cart" id="btn23"></p>
+                </div>
+            </div>
+            <div class="bed" id="bed24">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i24">Item8<i class="fa-regular fa-heart" onclick="clr_change('h8')" id="h8"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed24model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed24qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed24')" value="Add to cart" id="btn24"></p>
+                </div>
+            </div>
+        </div>
+        <div class="cat">
+            <h3>Spring Mattresses</h3>
+        </div>
+        <div class="cat" id="cat3">
+            <div class="bed" id="bed31">
+
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i31">Item9<i class="fa-regular fa-heart" onclick="clr_change('h9')" id="h9"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed31model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed31qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed31')" value="Add to cart" id="btn31"></p>
+                </div>
+
+
+            </div>
+            <div class="bed" id="bed32">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i32">Item10<i class="fa-regular fa-heart" onclick="clr_change('h10')" id="h10"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed32model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed32qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed32')" value="Add to cart" id="btn32"></p>
+                </div>
+
+
+
+            </div>
+            <div class="bed" id="bed33">
+
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i33">Item11<i class="fa-regular fa-heart" onclick="clr_change('h11')" id="h11"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed33model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed33qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed33')" value="Add to cart" id="btn33"></p>
+                </div>
+
+
+
+
+            </div>
+            <div class="bed" id="bed34">
+
+
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i34">Item12<i class="fa-regular fa-heart" onclick="clr_change('h12')" id="h12"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed34model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed34qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed34')" value="Add to cart" id="btn34"></p>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="cat">
+            <h3>Rebond Mattresses</h3>
+        </div>
+        <div class="cat" id="cat4">
+            <div class="bed" id="bed41">
+
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i41">Item13<i class="fa-regular fa-heart" onclick="clr_change('h13')" id="h13"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed41model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed41qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed41')" value="Add to cart" id="btn41"></p>
+                </div>
+
+
+            </div>
+            <div class="bed" id="bed42">
+
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i42">Item14<i class="fa-regular fa-heart" onclick="clr_change('h14')" id="h14"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed42model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed42qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed42')" value="Add to cart" id="btn42"></p>
+                </div>
+            </div>
+            <div class="bed" id="bed43">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i43">Item15<i class="fa-regular fa-heart" onclick="clr_change('h15')" id="h15"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed43model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed43qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <p><input type="button" class="checkout" onclick="bill('bed43')" value="Add to cart" id="btn43"></p>
+                </div>
+
+
+
+            </div>
+            <div class="bed" id="bed44">
+                <div class="details">
+                    <a href="product.html?ig=bed1.png">
+                        <img src="bed1.png" alt=""></a>
+                </div>
+                <div class="itemdetails">
+                    <p id="i44">Item16<i class="fa-regular fa-heart" onclick="clr_change('h16')" id="h16"
+                            style="color: red;"></i>
+                    </p>
+                    </p>
+                    <p>Price:₹2,559</p>
+                    <p class="mrp" style="text-decoration: line-through;">₹5,999</p>
+
+                    <select name="model" class="qtyclass" id="bed44model">
+                        <option value="Size">Size</option>
+                        <option value="1">72x36x4</option>
+                        <option value="2">72x48x4</option>
+                        <option value="3">72x48x6</option>
+                        <option value="4">72x72x6</option>
+                    </select>
+                    <select name="qty" class="selectclass" id="bed44qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <br>
+                    <input type="button" class="checkout" onclick="bill('bed44')" value="Add to cart" id="btn44">
+                </div>
+            </div>
+        </div>
+    </div>
+    <p id="cartqty">0</p>
+
+    <div class="alp" id="alp">
+
+        <div class="alert" id="al">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong id="textalert">Danger!</strong>
+            <p id="albar"></p>
+        </div>
+    </div>
+    <div class="cnf" id="cnf">
+        <p>
+            Are you sure
+        </p>
+        <button id="ok">Yes</button>
+        <button id="no">Cancel</button>
+    </div>
+    <footer id="foot">
+
+    </footer>
+    <script src="navscript.js"></script>
+</body>
+<script>
+    let cartitems = []; var totcartqty = 0;
+    function check(id, mod, qy) {
+        if (cartitems.length != 0) {
+            for (var i = 0; i < cartitems.length; i++) {
+                if (cartitems[i][0] == id) {
+                    totcartqty -= parseInt(cartitems[i][2]);
+                    cartitems[i][1] = mod;
+                    cartitems[i][2] = qy;
+                    totcartqty += parseInt(cartitems[i][2]);
+                    setTimeout(notify('Updated successfully', '#2196F3', 'blue'), 0);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    function exist(id) {
+        if (cartitems.length != 0) {
+            for (var i = 0; i < cartitems.length; i++) {
+                if (cartitems[i][0] == id) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+    function bill(str) {
+        // alert(str);
+        if (document.getElementById(str + 'qty').value == 0 || document.getElementById(str + 'model').value == 'Size') {
+            // background-color: #f27269;
+            var cid = exist(str.slice(3, 5));
+            if (cid == -1)
+                setTimeout(notify('Please Select Size and Qty ', '#f27269', 'red'), 0);
+            else {
+                if (confirm('Are you sure?')) {
+                    totcartqty -= parseInt(cartitems[cid][2]);
+                    document.getElementById(str + 'model').selectedIndex = 0;
+                    document.getElementById(str + 'qty').selectedIndex = 0;
+                    cartitems.splice(cid, 1);
+                    document.getElementById('btn' + str.slice(3, 5)).value = 'Add to cart';
+                    setTimeout(notify('removed successfully', '#f27269 ', 'red'), 0);
+                }
+
+                else {
+                    document.getElementById(str + 'model').selectedIndex = cartitems[cid][1];
+                    document.getElementById(str + 'qty').selectedIndex = cartitems[cid][2];
+                }
+            }
+        }
+        else {
+
+            if (check(str.slice(3, 5), document.getElementById(str + 'model').options[document.getElementById(str + 'model').selectedIndex].textContent, document.getElementById(str + 'qty').value) == 0) {
+                cartitems.push([str.slice(3, 5), document.getElementById(str + 'model').options[document.getElementById(str + 'model').selectedIndex].textContent, document.getElementById(str + 'qty').value, document.getElementById('i' + str.slice(3, 5)).textContent]);
+                totcartqty += parseInt(document.getElementById(str + 'qty').value);
+                document.getElementById('btn' + str.slice(3, 5)).value = 'Update cart';
+                setTimeout(notify('Added successfully', '#2196F3', 'blue'), 0);
+            }
+
+        }
+        document.getElementById('cartqty').textContent = totcartqty;
+    }
+
+    function change_tostr(cartitems) {
+        alert(cartitems.length);
+
+        alert(str);
+        return str;
+    }
+    function billingcost() {
+        var str = '';
+        for (var i = 0; i < cartitems.length; i++) {
+            str += cartitems[i][0].toString() + ',' + cartitems[i][1].toString()+ ',' + cartitems[i][2].toString() + ',' + cartitems[i][3].toString() + ',';
+        }
+        if (cartitems.length) {
+            window.location.href = "final_cart.html?param=" + cartitems;
+        }
+        else
+            setTimeout(notify('Please add atleast one product', '#f27269 ', 'red'), 0);
+    }
+
+    var width = 1;
+    function notify(msg, bgclr, clr) {
+        document.getElementById('al').style.display = "block";
+        document.getElementById('al').style.background = bgclr;
+        document.getElementById('textalert').textContent = msg;
+        document.getElementById('albar').style.background = clr;
+        move();
+
+    }
+
+    function move() {
+        var elem = document.getElementById("albar");
+        var width = 1;
+        var id = setInterval(frame, 20);
+        function frame() {
+            if (width >= 110) {
+                clearInterval(id);
+
+                document.getElementById('al').style.transitionDelay = "3s";
+                document.getElementById('al').style.display = "none";
+            } else {
+                width++;
+                elem.style.width = width + '%';
+            }
+        }
+    }
+
+    function clr_change(id) {
+        var ele = document.getElementById(id);
+        // alert(ele.className);
+        if (ele.className == "fa-solid fa-heart") {
+            ele.className = "fa-regular fa-heart";
+            ele.style.color = "none";
+        }
+        else {
+            // alert('hello');
+            ele.style.color = "red";
+            ele.className = "fa-solid fa-heart";
+        }
+    }
+    window.onload = function () {
+        // Your code to execute when the page is reloaded
+        for (var i = 1; i < 5; i++) {
+            for (var j = 1; j < 5; j++) {
+                // alert('bed'+i+j+'qty');
+                var selectElement = document.getElementById('bed' + i + j + 'qty');
+                var selectedIndex = selectElement.selectedIndex;
+                var str = 'bed' + i + j;
+                if (selectedIndex != 0) {
+                    bill(str);
+                    document.getElementById('al').style.display = "none";
+                    setTimeout(notify('Please Modify your cart', '#2196F3 ', 'blue'), 0);
+                    //cartitems.push([str.slice(3, 5), document.getElementById(str + 'model').options[document.getElementById(str + 'model').selectedIndex].textContent, document.getElementById(str + 'qty').value, document.getElementById('i' + str.slice(3, 5)).textContent]);
+                }
+            }
+        }
+
+    };
+
+
+</script>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Check Out</title>
+    <link rel="stylesheet" href="stylemain.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .billing {
+        margin-top: 90px;
+    }
+
+    .pincode {
+        /* background: white; */
+        color: rgb(126, 190, 22);
+        display: flex;
+
+    }
+
+    input {
+        height: 40px;
+        width: fit-content;
+        color: rgb(126, 190, 22);
+        padding: 0px 10px;
+        border: none;
+        font: bold;
+        font-size: large;
+        border-radius: 10px;
+        margin: 0px 5px;
+        /* border-bottom: 2px solid black; */
+    }
+
+    #btn {
+        background: rgb(126, 190, 22);
+        color: white;
+        padding: 0px 5px;
+    }
+
+    #btn:hover {
+        cursor: pointer;
+        ;
+    }
+
+    input,
+    :hover {
+        outline: 0;
+    }
+
+    i {
+        transform: scale(2);
+        margin: 10px;
+    }
+
+    @media (max-width :655px) {
+
+        #pincode,
+        #cityname {
+            width: 100px;
+            font-size: medium;
+            padding: 0px 5px;
+        }
+
+        input {
+            height: 30px;
+
+        }
+
+        i {
+            transform: scale(1.5);
+            margin: 10px;
+        }
+    }
+
+    #dlv {
+        color: blue;
+        font: bold;
+        font-size: larger;
+        margin-left: 10px;
+    }
+
+    .address {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        grid-gap: 1rem;
+
+    }
+
+    .address input {
+        margin: 5px 2px;
+        padding: 2px;
+        background: whitesmoke;
+        /* bottom: ; */
+        border: 2px solid grey;
+    }
+
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 100vw;
+        color: white;
+        background: rgb(126, 190, 22);
+        text-align: center;
+        border-radius: 80px;
+        /* height: 40px; */
+        padding: 5px 0px;
+    }
+
+    .pay input {
+        height: auto;
+        width: auto;
+
+    }
+
+    label {
+        font-size: large;
+        font: bold;
+    }
+
+    #mop {
+        background: rgb(126, 190, 22);
+        color: white;
+        padding: 3px 10px;
+        margin: 5px;
+        margin-top: 10px;
+        border-radius: 10px;
+        font-size: large;
+        width: fit-content;
+    }
+
+    h5 {
+        font-size: large;
+    }
+
+    #ptp {
+        background: purple;
+        color: white;
+        padding: 4px 7px;
+        border: none;
+        border-radius: 0;
+    }
+
+    .proceed {
+        display: flex;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+</style>
+
+<body>
+    <nav class="navbar" id="navbar">
+    </nav>
+    <div class="items" id="items" style="margin-top: 10px;">
+    </div>
+
+    <div class="billing">
+        <div class="pincode">
+            <i class="fa fa-map-marker">
+            </i>
+            <input type="text" placeholder="Enter pincode" id="pincode" required>
+            <input type="submit" value="Check" onclick="citynamefun()" id="btn">
+            <br>
+            <input type="text" placeholder="City name" id="cityname" readonly>
+        </div>
+        <div class="msg">
+            <p id="dlv"></p>
+        </div>
+        <h2>Delivery Adress</h2>
+
+        
+    </div>
+    <!-- <div class="forms"> -->
+        <form action=orderplaced.html method="GET" id="form1">
+            <!-- <input type="hidden" name="access_key" value="4549c060-5e01-4908-a7b6-7572a134f8ab"> -->
+            <div class="address">
+                <input type="text" placeholder="Your Name" required name="Name">
+                <input type="text" placeholder="DoorNo/FlatNo:" name="Dno" required>
+                <input type="text" placeholder="Address line1" name="Addline1" required>
+                
+                <input type="text" placeholder="Address line2 " name="Addline2" required>
+                <input type="text" placeholder="LandMark " name="Landmark" required>
+                <input type="text" placeholder="Mobile No " name="PhoneNo:" required>
+               
+                <input type="text" placeholder="City name" id="cityname1" name="Cityname:" readonly >
+                <input type="text" placeholder="Pincode" id="pincode1" name="Pincode:" readonly > 
+                <input type="text" hidden name="items" id="its" name="items">
+            </div>
+            <p id="tac"><input type="checkbox">  Accept terms and conditions</p>
+            <div class="proceed">
+                <h5 id="amt">Amount: </h5>
+                <button type="submit" id="ptp" >Place Order</button>
+            </div>
+            <!-- <button type="submit">Submit</button> -->
+        </form>
+    </div>
+    <footer id="foot">
+    </footer>
+    <script src="navscript.js"></script>
+
+</body>
+<script>
+    var paramValue = location.search.split('=')[1].split(';;');
+     //alert(paramValue[1].split('%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20^'));
+    document.getElementById('its').value=paramValue[1].split('%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20^');
+    alert(document.getElementById('its').value);
+    document.getElementById('amt').textContent = 'Amount :' + paramValue[0];
+    function citynamefun() {
+        $.ajax({
+            type: "GET",
+            url: "https://api.postalpincode.in/pincode/" + document.getElementById('pincode').value,
+            success: function (response) {
+                if (response[0].Status == 'Error') {
+                    document.getElementById('cityname').value = "";
+                    document.getElementById('dlv').style.color = 'red';
+                    document.getElementById('dlv').textContent = 'Non Deliverible pincode pls try with some other';
+                }
+                else {
+                    document.getElementById('dlv').style.color = 'black';
+                    document.getElementById('cityname').value = response[0].PostOffice[0].Division;
+                    document.getElementById('dlv').textContent = 'Delivery in 4-5 Days';
+                    document.getElementById('cityname1').value = response[0].PostOffice[0].Division;
+                    document.getElementById('pincode1').value = document.getElementById('pincode').value;
+                }
+            },
+        });
+    }
+    // function verify() {
+    //     if (document.getElementById('pincode1').value == "" || document.getElementById('addl1').value == "" || document.getElementById('mno').value == "" || document.getElementById('dno').value == "")
+    //         alert('Enter all details');
+    //     else
+    //         window.location.href = "orderplaced.html";
+    // }
+   
+</script>
+
+</html>

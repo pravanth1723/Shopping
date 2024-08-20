@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Cart</title>
+    <link rel="stylesheet" type="text/css" href="catstyle.css">
+    <link rel="stylesheet" href="stylemain.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<style>
+    nav {
+        position: absolute;
+        z-index: 2;
+    }
+
+   body{
+    background: rgba(0, 0, 0, 0.1);
+    /* background: whitesmoke; */
+   }
+    .custom-container {
+        position: relative;
+        padding: 20px;
+        margin: 20px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        width: 60vw;
+        /* background: whitesmoke; */
+    }
+
+    img {
+        height: 30vh;
+        width: 25vw;
+    }
+ 
+    .custom-container p:nth-child(2) {
+        color: black;
+        position: absolute;
+        right: 50px;
+        top: 20px;
+        font-weight: 550;
+        font-size: larger;margin-top: 10px;
+    }
+    .custom-container p:nth-child(3) {
+        color: black;
+        position: absolute;
+        right: 50px;
+        top: 40px; font-weight: 550;
+        font-size: larger;margin-top: 10px;
+    }
+
+
+    .custom-container p:nth-child(4) {
+        color: green;
+        position: absolute;
+        right: 50px;
+        bottom: 60px; font-weight: 550;
+        font-size: larger;margin-top: 10px;
+    }
+
+    .custom-container p:nth-child(5) {
+        color: green;
+        position: absolute;
+        right: 50px;
+        bottom: 40px; font-weight: 550;
+        font-size: larger;
+        margin-top: 10px;
+    }
+    .custom-container p:nth-child(6) {
+        color: red;
+        position: absolute;
+        right: 50px;
+        bottom: 20px; font-weight: 550;
+        font-size: larger;
+        margin-top: 10px;
+    }
+
+    #yits {
+        margin-top: 90px;
+        width: fit-content;
+        align-self: center;
+        font-size: x-large;
+        border-radius: 0px;
+        border: none;
+        padding: 2px 5px;
+    }
+
+    .card {
+        width: 30vw;
+        /* height: 100px; */
+        position: fixed;
+        top: 150px;
+        right: 20px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+        /* border: 0.5px grey solid; */
+        display: flex;
+        flex-direction: column;
+        padding: 1vw;
+        border-radius: 2px;
+        background: whitesmoke;
+    }
+
+
+
+    .inner_card{
+        display: flex;
+        flex-direction: row;
+        /* background: red; */
+       justify-content: space-between;
+       padding: 1vw;
+       margin-top: 10px;
+       border-top: 0.2px solid rgba(0, 0, 0, 0.2);
+       font-weight:500;
+       font-size: large;
+    }
+    .det{
+        display: flex;
+        flex-direction: column;
+        /* justify-items: start; */
+        justify-content: start;
+        align-items: start;
+        gap: 5px;
+        font-weight: 550;
+        color: rgba(0, 0, 0, 0.8);
+    }
+    .ans{
+        display: flex;
+        flex-direction: column;
+        /* justify-items: start; */
+        justify-content: end;
+        align-items: self-end;
+        gap: 5px;
+    }
+    #dtag{
+        background: rgb(126, 190, 22);
+        text-align: center;
+        font-weight: bold;
+        font-size: x-large;
+        width: 80%;
+        align-self: center;
+        color: whitesmoke;
+    }
+   
+    .ans p{
+        color: red;
+        font-size: large;
+        font-weight:500;
+    }
+    .ans p:nth-child(4){
+        color: green;
+        font-weight: bold;
+        font-size: larger;
+       
+    }
+    .card button{
+        /* background: linear-gradient(to top right,green 25%,orange 33%,orange 69%,green); */
+        color: white;
+        border:none;
+        border-radius: 0px;
+        padding: 4px 7px;
+        width: fit-content;
+        align-self: center;
+    }
+    .bts{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    @media (max-width:490px) {
+        .custom-container img{
+        /* display: none; */ 
+        position: relative;
+        height: 150px;
+        width: 75vw;
+        align-self: self-start;
+        /* bottom: 80px;right: 0px; */
+    }
+    }
+    @media (max-width:1056px) {
+        .items{
+            display: flex;
+            flex-direction: column;
+            /* justify-items: center; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+        width: 65vw;
+        /* height: 100px; */
+        position: relative;
+        top: 20px;
+        right: 0px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+        /* border: 0.5px grey solid; */
+        display: flex;
+        flex-direction: column;
+        padding: 1vw;
+        border-radius: 2px;
+        background: whitesmoke;
+    }
+    .custom-container p:nth-child(6) {
+        /* top: 0; */
+        bottom: 10px;
+        top: auto;
+    }
+    .custom-container p:nth-child(5) {
+        bottom: 25px; top: auto;
+    }
+    .custom-container p:nth-child(4) {
+        bottom: 40px; top: auto;
+    }
+    .custom-container p:nth-child(3) {
+        bottom: 55px; top: auto;
+    }
+    .custom-container p:nth-child(2) {
+        margin-top: 50px;
+        bottom: 70px; top: auto;
+    }
+    .custom-container{
+        width: 80vw;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+    }
+    .custom-container img{
+        /* display: none; */ 
+     position: relative;
+        height: 150px;
+        width: 75vw;
+        align-self: center;
+        /* bottom: 80px;right: 0px; */
+    }
+}
+</style>
+
+<body>
+    <nav class="navbar" id="navbar">
+    </nav>
+    <button id="yits">Cart Items</button>
+    <div class="items" id="items">
+        <div class="gh">
+            <div id="container"></div>
+        </div>
+        <div class="card">
+            <p id="dtag">Details</p>
+            <div class="inner_card">
+                <div class="det">
+                   
+                    <p>Quantity</p>
+                    <p>Price</p>
+                    <p>Shipping Charges</p>
+                    <p>Total Amount</p>
+                    
+                </div>
+                <div class="ans">
+                    <p id="tq">5</p>
+                    <p id="tc">1200</p>
+                    <p id="sc">1200</p>
+                    <p id="ta">2400</p>
+                </div>
+            </div>
+            <div class="bts">
+
+                <button onclick="back()">Modify Cart</button>
+                <button onclick="proceed()">Proceed</button>
+            </div>
+        </div>
+        
+        
+    </div>
+    <script src="navscript.js"></script>
+</body>
+<script>
+    function back()
+    {
+        history.back();
+    }
+    
+    var paramValue = location.search.split('=')[1].split(',');
+    // alert(paramValue);
+    var prices = [2599, 3299, 2599, 3299, 2599, 3299, 2599, 3299, 2599, 3299, 2599, 3299, 2599, 3299, 2599, 3299];
+    var cartitems = [];var tqty=0
+    var total_bill_amount = 0;
+    var strcart="";
+    for (var i = 0; i < paramValue.length; i = i + 4) {
+        cartitems.push([paramValue[i], paramValue[i + 1], parseInt(paramValue[i + 2]), paramValue[i + 3]]);
+        strcart+=paramValue[i].toString()+','+ paramValue[i + 1].toString()+',' +paramValue[i + 2].toString()+','+ paramValue[i + 3].toString()+'^';
+    }
+    for (var i = 0; i < cartitems.length; i++) {
+        var customClass = document.createElement('style');
+        customClass.type = 'text/css';
+        customClass.innerHTML = '.custom-container { background-color: #f0f0f0; }';
+        document.getElementById('items').appendChild(customClass);
+        var container = document.createElement("div");
+        container.classList.add("custom-container");
+        // Create an image element
+        var img = document.createElement("img");
+        img.src = 'bed1.png';
+        // Create a paragraph element for text content
+        container.appendChild(img);
+
+        var paragraph = document.createElement("p");
+        //alert('%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20^'.length);
+        var dup=cartitems[i][3].split('%')[0];
+        paragraph.textContent = 'Product Name : ' + dup
+        
+        container.appendChild(paragraph);
+
+        var paragraph = document.createElement("p");
+        paragraph.textContent = 'Model : ' + cartitems[i][1];
+        // Append the image and paragraph to the container
+        container.appendChild(paragraph);
+        var paragraph = document.createElement("p");
+        paragraph.textContent = 'Qty : ' + cartitems[i][2];
+        container.appendChild(paragraph);
+        var paragraph = document.createElement("p");
+        paragraph.textContent = 'Cost per Qty : ' + prices[parseInt(cartitems[i][3].slice(4, 6))-1];
+        container.appendChild(paragraph);
+        var paragraph = document.createElement("p");
+        paragraph.textContent = 'Total Cost : ' + prices[parseInt(cartitems[i][3].slice(4, 6))-1] * cartitems[i][2];
+        container.appendChild(paragraph);
+        container.style.background="whitesmoke";
+        tqty+=parseInt(cartitems[i][2])
+        total_bill_amount += prices[parseInt(cartitems[i][3].slice(4, 6))-1] * cartitems[i][2];
+        // Get the main container and append the custom container to it
+        var mainContainer = document.getElementById("container");
+        mainContainer.appendChild(container);
+    }
+    // alert(cartitems);
+
+    document.getElementById('tq').textContent=tqty;
+    document.getElementById('tc').textContent=total_bill_amount;
+    document.getElementById('sc').textContent=500;
+    document.getElementById('ta').textContent=500+total_bill_amount;
+    
+    function proceed()
+    {
+        window.location.href = "billing.html?param=" + parseInt(total_bill_amount+500)+';;'+strcart;
+    }
+</script>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/SignUp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+   
+</style>
+<body>
+    <div class="bground">
+        <div class="screen">
+            <form  action ="loginjsp.jsp" method="post">
+                <input type="text" id="userid" name="userid" placeholder="User-Id">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <div class="showhideclass">
+
+                    <input type="checkbox" id="showhide" name="showhide" onclick="check()">
+                    <p>ShowPassword</p>
+                </div>
+                <div class="cap">
+
+                    <input type="text" id="captcha" name="captcha">
+                    <!-- <p>refresh</p> -->
+                    <a onclick="refresh()">Refresh</a>
+                    
+                </div>
+                <input type="text" id="rescaptcha" name="rescaptcha" placeholder="Enter captcha">
+                <input type="submit" name="login" id="Login" value="Login">
+                <div class="newreg">
+                    <h4>Don't have account? </h4>
+                    <a href="register.html" id="reglink" >RegisterNow</a>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</body>
+<script>
+    function check()
+    {
+        var password=document.getElementById('password');
+        if(document.getElementById('showhide').checked==1)
+        {
+            if(password.type === "password")
+                password.type = "text";
+        }
+        else{
+                password.type = "password"
+        }
+    }
+    var c;//=document.getElementById('captcha').value;
+    c=Math.random()*100000;
+    function refresh()
+    {
+        c=Math.random()*100000;
+        document.getElementById('captcha').setAttribute('readonly', true);
+        document.getElementById('captcha').value=parseInt(c);
+    }
+    document.getElementById('captcha').setAttribute('readonly', true);
+    document.getElementById('captcha').value=parseInt(c);
+</script>
+</html>

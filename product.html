@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="stylemain.css">
+    <!-- <link rel="stylesheet" type="text/css" href="catstyle.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    body {
+        background: white;
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .nonnav {
+        margin-top: 80px;
+        /* position: absolute; */
+    }
+
+    .details {
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        /* background: white; */
+    }
+
+    img {
+        width: 45vw;
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #0F1111;
+        /* align-items:center */
+        /* justify-content: end; */
+        /* font-style: italic; */
+    }
+
+    .det {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .headings {
+        font-style: 20px;
+        font-weight: bold;
+        font-size: large;
+
+    }
+
+    .det p {
+        margin: 5px 0px;
+    }
+
+    .ans,
+    li {
+        margin-left: 5px;
+        font-size: large;
+        font-style: medium;
+        font-weight: normal;
+        font-family: initial;
+    }
+
+    .checked {
+        color: rgb(126, 190, 22);
+    }
+
+    .ch {
+        /* color: black; */
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        width: fit-content;
+        color: white;
+        background: rgb(126, 190, 22);
+        border-radius: 3px;
+        border-top-right-radius: 0px;
+        margin-top: 10px;
+        /* position: absolute; */
+        /* bottom: 0; */
+    }
+
+    #ri1,#ri2,#ri3{
+        width: 100px;
+        height: 100px;
+    }
+
+    .reviews ol {
+        display: flex;
+        flex-direction: column;
+        /* font-display: auto; */
+        /* flex-direction: row; */
+    }
+
+    .reviews ol .li {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    @media (max-width :991px){
+        .details{
+            flex-direction: column;
+        }
+        .details img{
+            width: 80vw;
+            align-items: center;
+            height: 200px;
+        }
+
+
+    }
+</style>
+
+<body>
+    <nav class="navbar" id="navbar" style="position: fixed;">
+    </nav>
+    <div class="nonnav">
+
+
+        <div class="bed" id="bed11">
+            <div class="details">
+                <div class="img">
+
+                    
+                        <img src="bed1.png" alt="" id="bedimg">
+                </div>
+                <div class="description">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat harum suscipit impedit, ullam
+                        eius aperiam reiciendis temporibus architecto inventore totam earum libero veritatis cumque
+                        molestias deserunt necessitatibus eligendi minus in!
+                    </p>
+
+                    <div class="det">
+                        <div class="headings">
+                            <p>Product Name:</p>
+                            <p>Brand:</p>
+                            <p>Material:</p>
+                            <p>Rating:</p>
+                        </div>
+                        <div class="ans">
+                            <!-- Mattresses bedp -->
+                            <p>Mattresses</p>
+                            <p>SleepWell</p>
+                            <p>Coir</p>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+                    </div>
+                    <div class="ch">
+                        <p style="color: blue;">SRK's</p>
+                        <p style="color: red; margin-left: 3px;"> choice</p>
+                    </div>
+                    <div class="btn">
+                        <a href="cat.html">
+                            <button>
+                                BuyNow
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="about" style="margin-left: 25px;">
+                <h2>About</h2>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing.
+                    </li>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                </ol>
+            </div>
+            <div class="FAQ" style="margin-left: 25px;">
+                <h2>Frerquently Asked Question's</h2>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing.
+                    </li>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                </ol>
+            </div>
+            <div class="reviews" style="margin-left: 25px;">
+                <h2>Reviews</h2>
+                <ol>
+                    <p class="li"></p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, nostrum veniam repellat
+                            repudiandae similique dicta?</p>
+                        <p>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </p>
+                        <img src="bed1.png" alt="" id="ri1">
+                    </p>
+                    <p class="li"></p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, nostrum veniam repellat
+                            repudiandae similique dicta?</p>
+                        <p>
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </p>
+                        <img src="bed1.png" alt="" id="ri2">
+                    </p>
+                    <p class="li"></p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, nostrum veniam repellat
+                        repudiandae similique dicta?</p>
+                    <p>
+
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                    </p>
+                    <img src="bed1.png" alt="" id="ri3">
+                </p>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <footer id="foot" style="position: relative; bottom: 0;">
+    </footer>
+    <script src="navscript.js"></script>
+</body>
+<script>
+    document.getElementById('bedimg').src=location.search.split('=')[1];
+</script>
+
+</html>

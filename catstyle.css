@@ -1,0 +1,162 @@
+body {
+    /* overflow-x:auto; */
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    background: red;
+}
+
+.cats {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cat {
+    /* overflow: dden; */
+    width: 100%;
+    /* background: yellow; */
+    /* margin-top: 20px; */
+    display: grid;
+    font-size: x-large;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    align-items: center; 
+    justify-content: space-around;
+    grid-gap: 1rem;
+    text-align: center;
+}
+
+.cat h3 {
+    font-family: cursive;
+}
+
+.bed {
+    /* margin-top: 5px; */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin: 5px; */
+    font-size: medium;
+    border-radius: 10px;
+    /* padding: 5px auto; */
+}
+
+
+
+.bed:hover {
+    cursor: pointer;
+    /* z-index: -1; */
+}
+
+.selectclass,
+.qtyclass {
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+}
+
+.details {
+    font-weight: bold;
+}
+
+.bed img {
+    margin-top: 5px;
+    height: 3vw;
+    width: 3vw;
+}
+
+.bed img :hover {
+    transform: scale(1.3);
+}
+
+.details img {
+    margin-top: 5px;
+    height: 20vh;
+    width: 20vw;
+}
+
+.checkout {
+    cursor: pointer;
+    margin: 5px;
+    padding: 2px 5px;
+    background: rgb(126, 190, 22);
+    color: white;
+    font-size: larger;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#cart {
+    position: fixed;
+    transform: scale(3);
+    /* background: yellow; */
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    color: rgb(126, 190, 22);
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+
+#cartqty {
+    position: fixed;
+    transform: scale(1.6);
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    color: white;
+    padding-right: 38px;
+    padding-bottom: 43px;
+}
+
+
+@media (max-width :991px) {
+    .details img {
+        margin-top: 5px;
+        height: 40vh;
+        width: 40vw;
+    }
+
+    #cart {
+        transform: scale(3.5);
+    }
+
+    #cartqty {
+        position: fixed;
+        /* transform: scale(); */
+        bottom: 0px;
+        right: 0px;
+        color: white;
+        padding: 55px 50px;
+    }
+}
+
+@media (max-width :655px) {
+    .details img {
+        margin-top: 5px;
+        height: 30vh;
+        width: 55vw;
+    }
+
+    .bed {
+
+        flex-direction: row;
+
+    }
+
+    .itemdetails {
+
+        margin-left: 15px;
+
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+    }
+}

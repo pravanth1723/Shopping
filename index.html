@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylemain.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<style>
+    /* body{
+    background: linear-gradient(to right top, black 12%, white 33%, grey 45%,white 69%, black 100%);
+} */
+</style>
+<body>
+
+    <nav class="navbar" id="navbar">
+    </nav>
+    <section>
+
+
+        <div class="nonnav">
+
+
+            <!-- Slides -->
+            <!-- <div class="slides"> -->
+
+            <div class="slideshow-container">
+                <i class="fa-solid fa-chevron-left" id="lefticon" onclick="indexdec()"></i>
+                <div class="mySlides">
+                    <img src="morning.jpg" alt="Slide 1">
+                </div>
+
+                <div class="mySlides">
+                    <img src="evening.jpg" alt="Slide 2">
+                </div>
+
+                <div class="mySlides">
+                    <img src="Night.jpg" alt="Slide 3">
+                </div>
+                <div class="mySlides">
+                    <img src="mrng.jpg" alt="Slide 1">
+                </div>
+
+                <div class="mySlides">
+                    <img src="volume-mute.png" alt="Slide 2">
+                </div>
+
+                <div class="mySlides">
+                    <img src="volume.png" alt="Slide 3">
+                </div>
+                <i class="fa-solid fa-chevron-right" id="righticon" onclick="indexinc()"></i>
+            </div>
+
+
+            <!-- Shop by category -->
+
+
+            <div class="category">
+                <h2 id="sbc">Shop By Category</h2>
+            </div>
+            <div class="shop">
+                <div class="categories">
+                    <div class="catg" id="cat1">
+                        <h4>Coir</h4>
+                        <img src="morning.jpg">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum tenetur commodi eaque hic
+                            perspiciatis cupiditate. Velit earum quis necessitatibus quasi harum autem sunt. Ipsa
+                            provident
+                            dicta explicabo beatae atque delectus?</p>
+                        <button id="onbtn1" onclick="call()">Order Now</button>
+                    </div>
+                    <div class="catg" id="cat1">
+                        <h4>Medicare</h4>
+                        <img src="mrng.jpg" alt="">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, tempora eos! Impedit porro
+                            reprehenderit iste molestias quia illo consequuntur quisquam autem recusandae, animi odit
+                            harum,
+                            vitae, ab possimus repellendus sed.</p>
+                        <button id="onbtn2" onclick="call()">Order Now</button>
+                    </div>
+                    <div class="catg" id="cat1">
+                        <h4>Pillows</h4>
+                        <img src="evening.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem hic consequatur
+                            doloribus
+                            repudiandae dolor, dolorem excepturi, earum a similique labore facilis delectus quaerat id
+                            nobis
+                            quasi, dolorum commodi odit.</p>
+                        <button id="onbtn3" onclick="call()">Order Now</button>
+
+                    </div>
+                    <div class="catg" id="cat1">
+                        <h4>Rebond</h4>
+                        <img src="Night.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nam incidunt necessitatibus!
+                            Iste
+                            itaque temporibus quasi aliquid velit totam sapiente rem minima voluptatum voluptatibus
+                            provident, unde, sequi ex esse error.</p>
+                        <button id="onbtn4" onclick="call()">Order Now</button>
+                    </div>
+                    <div class="catg" id="cat1">
+                        <h4>Foam</h4>
+                        <img src="volume-mute.png" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nam incidunt necessitatibus!
+                            Iste
+                            itaque temporibus quasi aliquid velit totam sapiente rem minima voluptatum voluptatibus
+                            provident, unde, sequi ex esse error.</p>
+                        <!-- <a href="cat.html"> -->
+                        <button id="onbtn5" onclick="call()">Order Now</button>
+                        </a>
+                    </div>
+                    <div class="catg" id="cat1">
+                        <h4>Spring</h4>
+                        <img src="volume.png" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nam incidunt necessitatibus!
+                            Iste
+                            itaque temporibus quasi aliquid velit totam sapiente rem minima voluptatum voluptatibus
+                            provident, unde, sequi ex esse error.</p>
+                        <button id="onbtn6" onclick="call()">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="choicemade">
+                <h3>
+
+                    Want mixture of materials and custom style ?
+
+                </h3>
+                <h3>Here it is, Click below button for your own style!!!</h3>
+                <button id="custstyle">
+                    Custom style
+                </button>
+            </div>
+
+        </div>
+    </section>
+    <footer id="foot">
+
+    </footer>
+    <script src="navscript.js"></script>
+</body>
+
+
+
+<script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("mySlides");
+    let notended = true;
+    function showSlides() {
+        let i;
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        if (notended)
+            setTimeout(showSlides, 5000);   // Change slide every 2 seconds
+    }
+    function indexinc() {
+        notended = false;
+        slides[slideIndex - 1].style.display = "none";
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        // slides.style.animationDuration = "2s";
+
+        slides[slideIndex - 1].style.display = "block";
+
+
+    }
+    function indexdec() {
+        notended = false;
+        slides[slideIndex - 1].style.display = "none";
+        slideIndex--;
+        if (slideIndex == 0)
+            slideIndex = slides.length;
+        slides[slideIndex - 1].style.display = "block";
+        // showSlides();
+    }
+    // Call the showSlides function to start the automatic sliding
+    window.onload = showSlides();
+
+    function call() {
+        window.location.href = "cat.html";
+    }
+</script>
+
+</html>

@@ -1,0 +1,208 @@
+<input type="checkbox" id="check">
+
+<label for="check">
+    <i class="fa-solid fa-bars" id="bar"></i>
+</label>
+<label class="logo">SRK</label>
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li id="servicesid"><a href="about.html">Services</a></li>
+    <li id="contactusid"><a href="about.html">Contact</a>
+        <div class="sub-menu-1">
+            <ul>
+                <li class="hoverme">
+                    <i class="fa-solid fa-message"></i>
+                    <a href="#">Chat</a>
+                </li>
+                <li class="hoverme">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="#">Call</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li id=><a href="login.html">Login/SignUp</a></li>
+
+</ul>
+
+
+<style>
+    #cart {
+        position: fixed;
+        transform: scale(3);
+        /* background: yellow; */
+        bottom: 0px;
+        right: 0px;
+        z-index: 1;
+        color: rgb(126, 190, 22);
+        padding-right: 25px;
+        padding-bottom: 25px;
+    }
+
+   
+
+    nav {
+        background: rgb(126, 190, 22);
+        height: 80px;
+        width: 100%;
+        margin: 0px;
+        position: fixed;
+    }
+
+    .logo {
+        font-size: 35px;
+        color: white;
+        line-height: 80px;
+        padding: 0px 100px;
+        font-weight: bold;
+    }
+
+    nav ul {
+        float: right;
+        margin-right: 10px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0px 30px;
+    }
+
+    nav ul li a {
+        color: white;
+        font-size: 21px;
+        font-family: cursive;
+    }
+
+    a.active,
+    a:hover {
+        background: white;
+        color: rgb(126, 190, 22);
+        transition: 0.15s;
+        /* border: solid white; */
+        border-radius: 10px;
+        padding: 3px 0px;
+    }
+
+    #bar {
+        line-height: 80px;
+        color: white;
+        font-size: 30px;
+        float: right;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
+    @media (max-width :1022px) {
+        .logo {
+            font-size: 30px;
+            padding-left: 10px;
+        }
+
+        nav ul li a {
+            font-size: 16px;
+        }
+    }
+
+    @media (min-width:200px) {
+        .sub-menu-1 {
+            display: none;
+        }
+
+        .sub-menu-1 ul {
+            background: rgb(126, 190, 22);
+            margin: 0px;
+        }
+
+        .sub-menu-1 ul li {
+            background: none;
+            margin: 0px;
+        }
+
+        #contactusid:hover .sub-menu-1 {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            margin-top: -2px;
+            margin-left: -5px;
+            /* margin-left: 10px; */
+        }
+
+        #contactusid:hover .sub-menu-1 ul {
+            display: flex;
+            flex-direction: column;
+            margin: 2px;
+            padding: 0;
+
+        }
+
+        #contactusid:hover .sub-menu-1 ul li {
+            width: 100px;
+            padding: 1px;
+            margin: 0px;
+            /* border-bottom: 1px dotted #fff; */
+            /* border-radius: 0%; */
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #contactusid:hover .sub-menu-1 ul li a:hover {
+
+            /* background: white; */
+            color: white;
+            background: rgb(126, 190, 22);
+            padding: 0px 2px;
+        }
+    }
+
+    @media (max-width :878px) {
+
+        #bar {
+            display: block;
+        }
+
+        ul {
+            position: fixed;
+            width: fit-content;
+            height: fit-content;
+            padding: 15px;
+            background: rgb(126, 190, 22);
+            top: 80px;
+            right: 100%;
+            text-align: center;
+            margin-right: 0px;
+        }
+
+        nav ul li {
+            display: block;
+            margin: 40px 0px;
+            line-height: 20px;
+        }
+
+        nav ul li a {
+            font-size: 20px;
+        }
+
+        a:hover,
+        a.active {
+            background: rgb(126, 190, 22);
+            color: white;
+            border-radius: 10px;
+            padding: 5px 0px;
+
+        }
+
+        #check:checked~ul {
+            right: 0;
+        }
+    }
+</style>
+<script>
+    // document.getElementById('cartqty').textContent=3;
+</script>
