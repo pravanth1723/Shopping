@@ -81,7 +81,7 @@
         </div>
     </div>
     <h3>
-        <p>OrderId :2310234957</p>
+        <p id="oid">OrderId :</p>
         <p>Order will be delivered in 4-5 Days
         </p>
         <p>
@@ -95,6 +95,7 @@
 </body>
 <script>
     var time = 0;
+    var oid_value=new Date();
     function redirect() {
         time++;
         document.getElementById('sec').textContent = 'This Page will be redirected to home page in  ' + parseInt(15 - time) + ' seconds ' + ' You can also go by';
@@ -102,10 +103,11 @@
             window.location.href = 'index.html';
         setTimeout(redirect, 1000);
     }
+    document.getElementById('oid').textContent='Order id: '+oid_value;
     const urlParams = new URLSearchParams(window.location.search);
      let paramValue=urlParams.get('items');
     
-    alert(paramValue);
+    // alert(paramValue);
     var items='';
     paramValue=paramValue.split(',');
     for(var i=0;i<paramValue.length;i=i+4)
@@ -115,12 +117,13 @@
    
     redirect();
     function post() {
-        alert('hi');
+        // alert('hi');
         $.ajax({
             type: "POST",
             url: "https://api.web3forms.com/submit",
             data: {
                 access_key:'4549c060-5e01-4908-a7b6-7572a134f8ab',
+                orderId:oid_value,
                 name: urlParams.get('Name'),
                 DoorNo:urlParams.get('Dno'),
                 Addline1:urlParams.get('Addline1'),
@@ -130,9 +133,9 @@
                 Cityname:urlParams.get('Cityname:'),
                 Pincode:urlParams.get('Pincode:'),
                 Items:items,
+                
             },
         });
-        alert('hi2');
     }
     post();
 
