@@ -96,6 +96,13 @@
 <script>
     var time = 0;
     var oid_value=new Date();
+    oid_value = oid_value.getFullYear() + ''+
+            (oid_value.getMonth() + 1) + ''+
+            oid_value.getDate() +''+ 
+            oid_value.getHours() + '' + 
+            oid_value.getMinutes() + '' + 
+            oid_value.getSeconds() + '' + 
+            oid_value.getMilliseconds();
     function redirect() {
         time++;
         document.getElementById('sec').textContent = 'This Page will be redirected to home page in  ' + parseInt(15 - time) + ' seconds ' + ' You can also go by';
